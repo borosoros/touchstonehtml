@@ -1,44 +1,84 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Custom</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Custom</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="script.js"></script>
 </head>
-
-<body>
-    <h1>
-        <nav>
-            <div class="flex-container">
-              <ul>
-                  <li><a href="homepage.html" class="navbutton">Homepage</a></li>
-                  <li><a href="about.html" class="navbutton">About</a></li>
-                <li><a href="gallerypage.html" class="navbutton">Gallery</a></li> 
-                <li><a href="custompage.html" class="navbutton">CustomPage</a></li>
-              </ul>
-            </div>
-          </nav>
-    </h1>
-      <script src="script.js"></script>
-      <footer>
-        <div class="newsletter">
-            Subscribe to the newsletter:
-            <input type="email" id="footeremail" required>
-            <button required>Subscribe</button>
+<body id="custompages">
+    <header>
+        <div class="logo">
+            <img src="imgs/logo.png" class="logo" alt="Logo" height="100" width="100">
+            <p>
+                BOOK HAVEN BOOKSTORE
+              </p>
         </div>
-            <nav>
-              <div class="flex-container">
-                <ul>
-                  <li><a href="gallerypage.html" class="navbutton">Gallery</a></li> 
+        <nav>
+            <div class="navi" id="burgermenu">
+                <svg xmlns="http://www.w3.org/2000/svg" height="2.0em" viewBox="0 0 448 512">
+                  <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                </svg>
+                <ul id="burgermenulinks">
+                  <li><a href="index.html" class="navbutton">Homepage</a></li>
                   <li><a href="about.html" class="navbutton">About</a></li>
-                  <li><a href="homepage.html" class="navbutton">Homepage</a></li>
-                  <li><a href="custompage.html" class="navbutton">Custompage</a></li>
+                  <li><a href="gallerypage.html" class="navbutton">Gallery</a></li>
+                  <li><a href="custompage.html" class="navbutton">CustomPage</a></li>
                 </ul>
               </div>
-            </nav>
-          </footer>
-</body>
+        </nav>
+    </header>
 
+    <main>
+        <h1>Collaboration with our overseas partners</h1>
+        <div class="reviews">
+        <p>
+            <img src="imgs/book3.png" width="400" height="300" alt="Book image">
+            <button type="button">Add to Cart</button>
+        </p>
+       <p>
+           We are partnering with our partners overseas to bring translations of our grimoire in 3 languages!
+       </p>
+
+        <h2>What the customer has to say</h2>
+        <img src="imgs/Sam-Bankman-Fried.jpg" width="300" height="200" alt="Sam Bankman-Fried">
+        <p>
+            "I'm so happy I was able to buy this book on sorcery in my native language, without this book I wouldn't have been able to use magic to summon my 26 billion dollar fortune."
+        </p>
+        <img src="imgs/rating-4-purple.png" height="25" width="100" alt="4-star rating">
+
+        <div class="bernie">
+            <img src="imgs/bernard-madoff-walks-out-from-federal-court-after-a-bail-news-photo-1671641454.jpg" width="300" height="250" alt="Bernard Madoff">
+        </div>
+        <p>
+            "Thanks to this book I was able to become a very successful and legitimate stock-broker"
+        </p>
+        <img src="imgs/rating-4-purple.png" height="25" width="100" alt="4-star rating">
+  <br>
+  <br>
+  <br>
+    </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="newsletter">
+                Subscribe to the newsletter:
+                <input type="email" id="footeremail" required>
+                <button type="submit">Subscribe</button>
+            </div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="gallerypage.html" class="navbutton">Gallery</a></li>
+                    <li><a href="about.html" class="navbutton">About</a></li>
+                    <li><a href="index.html" class="navbutton">Homepage</a></li>
+                    <li><a href="custompage.html" class="navbutton">Custompage</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>

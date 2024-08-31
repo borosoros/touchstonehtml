@@ -3,116 +3,177 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gallery</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-  <img src="imgs/logo.png" height="100" width="100">
+  <script src="script.js"></script>
+   <style>
+    body {
+      font-family: "Times New Roman", Times, serif;
+      font-weight: bold;
+    }
+  </style>
+    <div class="logo">
+      <img src="imgs/logo.png" class="logo" alt="Logo" height="100" width="100">
+      <p>
+        BOOK HAVEN BOOKSTORE
+      </p>
+  </div>
 </head>
 
 <body>
-  <button>
-  View to Cart
-  </button>
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Your Cart</h2>
+      <ul id="cartItems"></ul>
+      <button id="clearCart">Clear Cart</button>
+      <button id="processOrder">Process Order</button>
+      </div>
+      <script>
+      var modal = document.getElementById("cartModal");
+      
+      var btn = document.getElementById("viewCartBtn");
+      
+      var span = document.getElementsByClassName("close")[0];
+      
+      btn.onclick = function() {
+        modal.style.display = "block";
+        displayCart(); // Call function to display cart items
+      }
+      
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+      
+      function displayCart() {
+        let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+        let cartList = document.getElementById('cartItems');
+        cartList.innerHTML = '';
+        cart.forEach(item => {
+          let li = document.createElement('li');
+          li.textContent = item;
+          cartList.appendChild(li);
+        });
+      }
+      </script>
+  </div>
+  
+  <div class="cartfloat">
+    <button id="viewCartBtn">View Cart</button>
+  </div>
+</div>
+
+<div class="clearandprocess">
+  <button id="clearCart">Clear Cart</button>
+
+<button id="processOrder">Process Order</button>
+</div>
     <h1>
       Gallery
-        <nav>
-            <div class="flex-container">
-              <ul>
-                  <li><a href="homepage.html" class="navbutton">Homepage</a></li>
-                  <li><a href="about.html" class="navbutton">About</a></li>
-                <li><a href="gallerypage.html" class="navbutton">Gallery</a></li> 
-                <li><a href="custompage.html" class="navbutton">CustomPage</a></li>
-              </ul>
-            </div>
-          </nav>
+      <div class="navi" id="burgermenu">
+        <svg xmlns="http://www.w3.org/2000/svg" height="2.0em" viewBox="0 0 448 512">
+          <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+        </svg>
+        <ul id="burgermenulinks">
+          <li><a href="index.html" class="navbutton">Homepage</a></li>
+          <li><a href="about.html" class="navbutton">About</a></li>
+          <li><a href="gallerypage.html" class="navbutton">Gallery</a></li>
+          <li><a href="custompage.html" class="navbutton">CustomPage</a></li>
+        </ul>
+      </div>
     </h1>
+    <div class="products">
 <h2>
   Products
 </h2>
 <div>
-  <h2>Products</h2>
   <table>
     <tr>
       <td>
-        <img src="imgs/Client3Book1.png" height="200" width="300">
-        Brie Mine 4Ever, a book for cheese lovers
-        <br>
+        <div id="bookcat" class="Bookcat">
+        <img src="imgs/Client3Book1.png" height="200" width="300" alt="Brie Mine 4Ever book">
+        <p>Brie Mine 4Ever, a book for cheese lovers</p>
         <button>Add to Cart</button>
       </td>
       <td>
-        <img src="imgs/book2.png" height="200" width="300">
-        Glory Riders, a book about bikers
-        <br>
+        <img src="imgs/book2.png" height="200" width="300" alt="Glory Riders book">
+        <p>Glory Riders, a book about bikers</p>
         <button>Add to Cart</button>
       </td>
       <td>
-        <img src="imgs/book3.png" height="200" width="300">
-        Sorcerer’s Shadowed Chronicles, a fantasy book
-        <br>
+        <img src="imgs/book3.png" height="200" width="300" alt="Sorcerer's Shadowed Chronicles book">
+        <p>Sorcerer's Shadowed Chronicles, a fantasy book</p>
+        <button>Add to Cart</button>
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="magcat" id="magcat">
+        <img src="imgs/magazine1.png" height="200" width="300" alt="Ball magazine">
+        <p>Ball, a magazine about pickleball</p>
+        <button>Add to Cart</button>
+      </td>
+      <td>
+        <img src="imgs/Magazine2.png" height="200" width="300" alt="Travel magazine">
+        <p>Travel, a magazine for travelers</p>
+        <button>Add to Cart</button>
+      </td>
+      <td>
+        <img src="imgs/Client3Magazine3.png" height="200" width="300" alt="Eat. magazine">
+        <p>Eat., a magazine for foodies</p>
+      </div>
         <button>Add to Cart</button>
       </td>
     </tr>
     <tr>
       <td>
-        <img src="imgs/magazine1.png" height="200" width="300">
-        Ball, a magazine about pickleball
-        <br>
+        <div class="misccat" od="misccat">
+        <img src="imgs/Client3Totenag.png" height="200" width="300" alt="Canvas tote bag">
+        <p class="totetext">A canvas tote bag with black lettering that says ALL I DO IS READ READ READ</p>
         <button>Add to Cart</button>
       </td>
       <td>
-        <img src="imgs/Magazine2.png" height="200" width="300">
-        Travel, a magazine for travelers
-        <br>
+        <img src="imgs/Client3Notebook.png" height="200" width="300" alt="Book Haven Bookstore notebook">
+        <p class="notetext">A notebook with text on the cover that says Book Haven Bookstore</p>
         <button>Add to Cart</button>
       </td>
       <td>
-        <img src="imgs/Client3Magazine3.png" height="200" width="300">
-        Eat., a magazine for foodies
-        <br>
-        <button>Add to Cart</button>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img src="imgs/Client3Notebook.png" height="200" width="300">
-        A canvas tote bag with black lettering that says ALL I DO IS READ READ READ
-        <br>
-        <button>Add to Cart</button>
-      </td>
-      <td>
-        <img src="imgs/Client3Stickers.png" height="200" width="300">
-        A notebook with text on the cover that says Book Haven Bookstore
-        <br>
-        <button>Add to Cart</button>
-      </td>
-      <td>
-        <img src="imgs/Client3Totenag.png" height="200" width="300">
-        A set of four Book Haven Bookstore stickers that promote reading
-        <br>
+        <img src="imgs/Client3Stickers.png" height="200" width="300" alt="Book Haven Bookstore stickers">
+        <p class="stickertext">A set of four Book Haven Bookstore stickers that promote reading</p>
+      </div>
+    </div>
         <button>Add to Cart</button>
       </td>
     </tr>
   </table>
-</div>   
+</div>  
 <br>
       <script src="script.js"></script>
       <footer>
-        <div class="newsletter">
-            Subscribe to the newsletter:
-            <input type="email" id="footeremail" required>
-            <button required>Subscribe</button>
-        </div>
-            <nav>
-              <div class="flex-container">
+        <div class="footer-content">
+            <div class="newsletter">
+                Subscribe to the newsletter:
+                <input type="email" id="footeremail" required>
+                <button type="submit">Subscribe</button>
+            </div>
+            <nav class="footer-nav">
                 <ul>
-                  <li><a href="gallerypage.html" class="navbutton">Gallery</a></li> 
-                  <li><a href="about.html" class="navbutton">About</a></li>
-                  <li><a href="homepage.html" class="navbutton">Homepage</a></li>
-                  <li><a href="custompage.html" class="navbutton">Custompage</a></li>
+                    <li><a href="gallerypage.html" class="navbutton">Gallery</a></li>
+                    <li><a href="about.html" class="navbutton">About</a></li>
+                    <li><a href="index.html" class="navbutton">Homepage</a></li>
+                    <li><a href="custompage.html" class="navbutton">Custompage</a></li>
                 </ul>
-              </div>
             </nav>
-          </footer>
+        </div>
+    </footer>
 </body>
 
 </html>
