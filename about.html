@@ -3,26 +3,40 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Us</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="script.js"></script>
+  <style>
+    body {
+      font-family: "Times New Roman", Times, serif;
+      font-weight: bold;
+    }
+  </style>
 </head>
-<img src="imgs/logo.png" height="100" width="100">
 
 <body>
+
+    <div class="logo">
+        <img src="imgs/logo.png" class="logo" alt="Logo" height="100" width="100">
+        <p>
+          BOOK HAVEN BOOKSTORE
+        </p>
+    </div>
   <s1>
     <h1>
       About Us
-        <nav>
-            <div class="flex-container">
-              <ul>
-                  <li><a href="homepage.html" class="navbutton">Homepage</a></li>
-                  <li><a href="about.html" class="navbutton">About</a></li>
-                <li><a href="gallerypage.html" class="navbutton">Gallery</a></li> 
-                <li><a href="custompage.html" class="navbutton">CustomPage</a></li>
-              </ul>
-            </div>
-          </nav>
+      <div class="navi" id="burgermenu">
+        <svg xmlns="http://www.w3.org/2000/svg" height="2.0em" viewBox="0 0 448 512">
+          <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+        </svg>
+        <ul id="burgermenulinks">
+          <li><a href="index.html" class="navbutton">Homepage</a></li>
+          <li><a href="about.html" class="navbutton">About</a></li>
+          <li><a href="gallerypage.html" class="navbutton">Gallery</a></li>
+          <li><a href="custompage.html" class="navbutton">CustomPage</a></li>
+        </ul>
+      </div>
     </h1>
     <div class="closinghours">
     <table>
@@ -48,54 +62,71 @@
 </s1>
 <s2>
   <div class="about">
-  <h2>
+  <h2 class="abouthead">
     About Us
   </h2>
-  <p>
+  <p class="aboutp">
     Book Haven Bookstore is a local treasure for book enthusiasts, offering a diverse selection of books, magazines, journals, and office supplies. With a deep-rooted commitment to fostering literary exploration and a love for reading, it is embarking on the creation of an online presence that mirrors its dedication to the world of words. Serving a broad audience of book lovers and knowledge seekers, its central goal is to amplify its visibility, cultivate a vibrant literary community, and simplify the process of book inquiries and purchases. Its target audience comprises avid readers, students, and individuals in search of high-quality reading materials and office essentials. Book Haven Bookstore’s website theme revolves around celebrating the written word, creating an inviting digital space that encourages literary discovery, and supporting intellectual growth.
   </p>
+  <br>
+  <br>
+  <br>
+
 </div>
 </s2>
 
-<div>
+<div class="form-container">
+  <h3>Contact Us</h3>
   <form action="/submit-url" method="post">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
   
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="footeremail" name="email" required>
+    </div>
   
-    <label for="Phone">Phone:</label>
-    <input type="tel" id="Phone" required>
-
-    <label for="order">Order Information: </label>
-    <textarea id="order" name="order"></textarea>
-    <br>
-    <input type="submit" value="submit">
-    <input type="button" value="clear">
-
-    <input type="checkbox" value="checkbox">Custom Order
-    
+    <div class="form-group">
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone">
+    </div>
+  
+    <div class="form-group">
+      <label for="feedback">Feedback:</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+    </div>
+  
+    <div class="form-group checkbox">
+      <input type="checkbox" id="custom-order" name="custom-order">
+      <label for="custom-order">Custom Order</label>
+    </div>
+  
+    <div class="form-buttons">
+      <button type="submit">Submit</button>
+      <button type="reset">Clear</button>
+    </div>
   </form>
+  
 </div>
 
-    <footer>
-  <div class="newsletter">
-      Subscribe to the newsletter:
-      <input type="email" id="footeremail" required>
-      <button required>Subscribe</button>
-  </div>
-      <nav>
-        <div class="flex-container">
+<footer>
+  <div class="footer-content">
+      <div class="newsletter">
+          Subscribe to the newsletter:
+          <input type="email" id="footeremail" required>
+          <button type="submit">Subscribe</button required>
+      </div>
+      <nav class="footer-nav">
           <ul>
-            <li><a href="gallerypage.html" class="navbutton">Gallery</a></li> 
-            <li><a href="about.html" class="navbutton">About</a></li>
-            <li><a href="homepage.html" class="navbutton">Homepage</a></li>
-            <li><a href="custompage.html" class="navbutton">Custompage</a></li>
+              <li><a href="gallerypage.html" class="navbutton">Gallery</a></li>
+              <li><a href="about.html" class="navbutton">About</a></li>
+              <li><a href="index.html" class="navbutton">Homepage</a></li>
+              <li><a href="custompage.html" class="navbutton">Custompage</a></li>
           </ul>
-        </div>
       </nav>
-    </footer>
-
+  </div>
+</footer>
 </body>
 </html>
